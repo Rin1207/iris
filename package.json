@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.18.0",
+    "@napi-rs/canvas": "^0.1.78",
+    "canvas": "^3.2.0",
+    "discord.js": "^14.21.0",
+    "ffmpeg-static": "^5.2.0",
+    "spotify-url-info": "^3.2.18",
+    "yt-dlp-exec": "^1.0.2"
+  },
+  "name": "iris",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
