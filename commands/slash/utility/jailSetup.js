@@ -6,9 +6,12 @@ module.exports = {
          .setDescription('setups the jail system'),
 
      async execute(interaction) {
-          const jailChannel = interaction.guild.channels.create('jail');
+          const jailChannel = interaction.guild.channels.create({
+               name: 'jail',
+               
+          });
           const jailRole = interaction.guild.roles.create({
-            name: 'jail',
+            name: 'jailed',
           });
      }
 
