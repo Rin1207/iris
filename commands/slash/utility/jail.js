@@ -17,7 +17,7 @@ module.exports = {
             const userId = user.id;
             const category = interaction.guild.channels.cache.get(logChannel);
 
-            interaction.guild.channels.create({ 
+            const channel = interaction.guild.channels.create({ 
                 name: `${username}`, 
                 parent: `${category}`, 
                 permissionOverwrites: [
@@ -32,6 +32,9 @@ module.exports = {
                 ]
             })
             user.roles.add(role => role.name === 'jailed');
+
+            channel.send({ content: 'yo you are jailed bro' });
         }
 
 }
+
