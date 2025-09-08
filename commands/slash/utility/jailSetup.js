@@ -13,5 +13,5 @@ module.exports = {
      }
 
 
-    interaction.reply('created jail channel and jail role');
+    await interaction.reply('created jail channel and jail role');
 }
