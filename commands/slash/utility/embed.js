@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder,  } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -20,4 +20,18 @@ module.exports = {
             option.setName('color')
             .setDescription('color of the embed')
         )
+
+        const channel = interaction.options.getChannel('channel');
+        const title = interaction.options.getString('title');
+        const description = interaction.options.getString('description');
+        const color = interaction.options.getString('color');
+
+        const embed = new EmbedBuilder()
+              .setTitle(title)
+              .setDescription(description)
+              .setColor(color || '0D98BA') 
+
+        channel.send({ embeds: [embed] });
+
+        
 }
