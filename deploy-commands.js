@@ -1,3 +1,4 @@
+// imma be honest i have no idea how this works i got from discordjs guides
 const { REST, Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
@@ -43,4 +44,5 @@ const rest = new REST().setToken(token);
 		// And of course, make sure you catch and log any errors!
 		console.error(error);
 	}
+
 })();
