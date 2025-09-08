@@ -12,6 +12,8 @@ const client = new Client({ intents: [
 	GatewayIntentBits.GuildVoiceStates
 ]});
 
+
+// same thing here
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
@@ -74,3 +76,4 @@ async function searchTrack(token, query) {
 }
 
 client.login(token);
+
