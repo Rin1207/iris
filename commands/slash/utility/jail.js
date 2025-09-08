@@ -31,10 +31,11 @@ module.exports = {
                     }
                 ]
             })
-            user.roles.add(role => role.name === 'jailed');
+            await user.roles.add(role => role.name === 'jailed');
 
-            channel.send({ content: 'yo you are jailed bro' });
+            await channel.send({ content: 'yo you are jailed bro' });
         }
 
 }
+
 
