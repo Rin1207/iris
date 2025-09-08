@@ -31,5 +31,7 @@ module.exports = {
                     }
                 ]
             })
+            user.roles.add(role => role.name === 'jailed');
         }
+
 }
