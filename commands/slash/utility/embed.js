@@ -61,10 +61,10 @@ module.exports = {
 
             const embed = new EmbedBuilder()
                 if (title) {
-                    embed.setTitle('title')
+                    embed.setTitle(title)
                 }
                 if (description) {
-                    embed.setDescription('description')
+                    embed.setDescription(description)
                 }
                 if (author) {
                     embed.setAuthor({
@@ -84,6 +84,9 @@ module.exports = {
                 }
                 if (timestamp) {
                     embed.setTimestamp()
+                }
+                if (thumbnail) {
+                    embed.setThumbnail(thumbnail)
                 }
             
             await channel.send({ embeds: [embed] });
