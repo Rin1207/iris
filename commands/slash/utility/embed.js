@@ -50,7 +50,7 @@ module.exports = {
         async execute(interaction) {
             const channel = interaction.options.getChannel('channel');
             const title = interaction.options.getString('title');
-            const description = interaction.options.getString('description');
+            let description = interaction.options.getString('description');
             const url = interaction.options.getString('url');
             const author = interaction.options.getString('author');
             const icon = interaction.options.getString('icon');
@@ -65,6 +65,7 @@ module.exports = {
                     embed.setTitle(title)
                 }
                 if (description) {
+                    description = description.replace(/\\n/g, '\n');
                     embed.setDescription(description)
                 }
                 if (author) {
