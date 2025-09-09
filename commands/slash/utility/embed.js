@@ -58,6 +58,7 @@ module.exports = {
             const color = interaction.options.getString('color');
             const image = interaction.options.getString('image');
             const timestamp = interaction.options.getBoolean('timestamp')
+            const thumbnail = interaction.options.getString('thumbnail')
 
             const embed = new EmbedBuilder()
                 if (title) {
