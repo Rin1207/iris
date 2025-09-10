@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, PermissionsBitField, MessageFlags } = require('discord.js');
-const { logChannel } = require('../../../config.json');
+const { logChannel } = require('../../config.json');
 
 module.exports = {
     data: new SlashCommandBuilder()
