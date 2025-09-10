@@ -7,6 +7,10 @@ module.exports = {
 
     async execute(interaction) {
 
+        if (!interaction.member.permissions.has([PermissionsBitField.Flags.ManageChannels])) {
+            return interaction.reply('you have no perms hahahaha');
+        }
+
         const confirm = new ButtonBuilder()
             .setCustomId('confirm')
             .setLabel('confirm')
