@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonStyle, ButtonBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonStyle, ButtonBuilder, PermissionsBitField } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -7,6 +7,9 @@ module.exports = {
 
     async execute(interaction) {
 
+        if (!interaction.member.permissions.has([PermissionsBitField.Flags.ManageChannels])) {
+            return interaction.reply('you have no perms haha');
+        }
         const confirm = new ButtonBuilder()
             .setCustomId('confirm')
             .setLabel('confirm')
@@ -23,7 +26,7 @@ module.exports = {
             .addComponents(confirm, cancel)
 
         const response = await interaction.reply({ 
-            content: 'are you sure you wanna clone and delete this channel?', 
+            content: 'are you sure you wanna clone and delete this channel', 
             components: [row],
             withResponse: true
         });
