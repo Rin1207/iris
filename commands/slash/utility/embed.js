@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, SelectMenuOptionBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, SelectMenuOptionBuilder, PermissionsBitField } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -48,6 +48,10 @@ module.exports = {
 
 
         async execute(interaction) {
+
+            if (!interaction.member.permissions.has([PermissionsBitField.Flags.ManageMessages]) {
+                 return await interaction.reply('bro you can\'t even type in that channel')
+            }
             const channel = interaction.options.getChannel('channel');
             const title = interaction.options.getString('title');
             let description = interaction.options.getString('description');
