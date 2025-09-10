@@ -50,7 +50,7 @@ module.exports = {
         async execute(interaction) {
 
             if (!interaction.member.permissions.has([PermissionsBitField.Flags.ManageMessages]) {
-                 return await interaction.reply('bro you can\'t even type in that channel')
+                 return await interaction.reply('bro you can\'t even type in that channel');
             }
             const channel = interaction.options.getChannel('channel');
             const title = interaction.options.getString('title');
@@ -61,8 +61,8 @@ module.exports = {
             const uurl = interaction.options.getString('uurl');
             const color = interaction.options.getString('color');
             const image = interaction.options.getString('image');
-            const timestamp = interaction.options.getBoolean('timestamp')
-            const thumbnail = interaction.options.getString('thumbnail')
+            const timestamp = interaction.options.getBoolean('timestamp');
+            const thumbnail = interaction.options.getString('thumbnail');
 
             const embed = new EmbedBuilder()
                 if (title) {
